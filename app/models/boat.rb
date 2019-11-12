@@ -1,4 +1,5 @@
 class Boat < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   belongs_to :owner, class_name: 'User'
   has_many :reviews
   has_many :rentals
