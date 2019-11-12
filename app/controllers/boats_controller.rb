@@ -15,5 +15,5 @@ class BoatsController < ApplicationController
         #To be modified later
         @boats = Boat.all
     end
-    
+
 end
