@@ -1,7 +1,10 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-lewagon">
+  <li class="nav-logo" style="list-style: none;>
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= image_tag "logo-low-boat-homie.png", class: "logo"; %>
     <% end %>
+    <p> Low Boat Homie</p>
+  </li>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -27,7 +30,18 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <i class="fa-lg far fa-star"></i>
+          <%= link_to "Reviews", new_user_session_path, class: "nav-link" %>
+        <li class="nav-item">
+          <i class="fas fa-lg fa-question-circle"></i>
+          <%= link_to "Aide", new_user_session_path, class: "nav-link" %>
+        <li class="nav-item">
+          <i class="fa-lg far fa-user"></i>
+          <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <i class="fa-lg fas fa-user-edit"></i>
+          <%= link_to "Inscription", new_user_registration_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>

@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+.home-header {
+    height: 680px;
+    width: 100%;
+    background-image: url("https://spotlight.it-notes.ru/wp-content/uploads/2016/12/fc0d564cafa86fa61e54cbb2c3c7817b.jpg");
+    background-size: cover;
+}
+
+.home-title h1 {
+  font-family: $headers-font;
+  color: black;
+  text-align: center;
+  font-size: 56px;
+  padding: 16px 10px;
+  text-shadow: white 1px 0 10px;
+}
