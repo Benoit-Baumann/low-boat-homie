@@ -1,20 +1,22 @@
 class ProfileController < ApplicationController
     before_action :set_rental, only: [:rental, :rental_destroy]
-    before_action :set_boat, only: [:boat, :boat_edit, :boat_destroy]
+    before_action :set_boat, only: [:boat, :boat_edit, :boat_update, :boat_destroy]
 
     #GET /profile
     def show
-        @user = current_user
+        # @user = current_user
     end
 
     #GET /profile/rentals
     def rentals
-        @rentals = current_user.rentals
+        @rentals =  policy_scope(Rental).order(created_at: :desc)
+        # @rentals = current_user.rentals
     end
 
     #GET /profile/rentals/:id
     def rental
         @rental = Rental.find(params[:id])
+        authorize @rental
     end
 
     #GET /profile/rentals/:id/edit
@@ -37,7 +39,7 @@ class ProfileController < ApplicationController
     #DELETE /profile/rental/:id
     def rental_destroy
         authorize @rental
-        @rental.destroy?
+        @rental.destroy
         respond_to do |format|
           format.html { redirect_to my_rentals_path, notice: 'Rental was successfully destroyed.' }
           format.json { head :no_content }
@@ -46,7 +48,8 @@ class ProfileController < ApplicationController
 
     #GET /profile/boats
     def boats
-        @boats = current_user.boats
+        @boats =  policy_scope(Boat).order(created_at: :desc)
+        # @boats = current_user.boats
     end
 
     #GET /profile/boats/:id
@@ -56,14 +59,10 @@ class ProfileController < ApplicationController
 
     #GET /profile/boats/:id/edit
     def boat_edit
-      authorize @boat
-        @boat.edit?
     end
 
     #PATCH /profile/boats/:id
     def boat_update
-      authorize @boat
-        @boat.update?
         respond_to do |format|
             if @boat.update(rental_params)
               format.html { redirect_to my_boat_path(@boat), notice: 'Boat was successfully updated.' }
@@ -77,8 +76,6 @@ class ProfileController < ApplicationController
 
     #DELETE /profile/boats/:id
     def boat_destroy
-      authorize @boat
-        @boat.destroy?
         @boat.destroy
         respond_to do |format|
           format.html { redirect_to my_boats_path, notice: 'Boat was successfully destroyed.' }
