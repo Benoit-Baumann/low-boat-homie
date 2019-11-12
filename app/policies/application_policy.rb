@@ -15,7 +15,7 @@ class ApplicationPolicy
   end
 
   def create?
-    record.user = user
+    record.user == user
   end
 
   def new?
@@ -23,7 +23,7 @@ class ApplicationPolicy
   end
 
   def update?
-    record.user = user
+    record.user == user
   end
 
   def edit?
@@ -31,7 +31,7 @@ class ApplicationPolicy
   end
 
   def destroy?
-    record.user = user
+    record.user == user
   end
 
   class Scope
