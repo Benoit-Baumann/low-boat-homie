@@ -15,30 +15,10 @@ class ProfileController < ApplicationController
 
     #GET /profile/rentals/:id
     def rental
-        @rental = Rental.find(params[:id])
-        authorize @rental
     end
-
-    #GET /profile/rentals/:id/edit
-    # def rental_edit
-    # end
-
-    #PATCH /profile/rentals/:id
-    # def rental_update
-    #     respond_to do |format|
-    #         if @rental.update(rental_params)
-    #           format.html { redirect_to my_rental_path(@rental), notice: 'Rental was successfully updated.' }
-    #           format.json { render :show, status: :ok, location: @rental }
-    #         else
-    #           format.html { render :edit }
-    #           format.json { render json: @rental.errors, status: :unprocessable_entity }
-    #         end
-    #       end
-    # end
 
     #DELETE /profile/rental/:id
     def rental_destroy
-        authorize @rental
         @rental.destroy
         respond_to do |format|
           format.html { redirect_to my_rentals_path, notice: 'Rental was successfully destroyed.' }
