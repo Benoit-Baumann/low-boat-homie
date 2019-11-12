@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :boats do
+  resources :boats, only: [:index, :show] do
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]
     resources :rentals, only: [:new, :create]
   end
