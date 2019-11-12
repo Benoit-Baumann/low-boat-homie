@@ -1,0 +1,6 @@
+<h1>My boats</h1>
+<br>
+<%= current_user.first_name & " " & current_user.last_name %>
+<% @boats.each do |boat| %>
+    <p><%= boat.id %></p>
+<% end %>
