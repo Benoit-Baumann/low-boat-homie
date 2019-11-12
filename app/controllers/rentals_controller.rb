@@ -1,5 +1,4 @@
 class RentalsController < ApplicationController
-
   def rental_new
     @boat = Boat.find(params[:boat_id])
     @rental = Rental.new
