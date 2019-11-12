@@ -5,6 +5,7 @@ class ProfileController < ApplicationController
     #GET /profile
     def show
         # @user = current_user
+        authorize current_user
     end
 
     #GET /profile/rentals
@@ -76,7 +77,7 @@ class ProfileController < ApplicationController
     end
 
     def boat_params
-        params.require(:params).permit(:name, :)
+        params.require(:params).permit(:name, :type, :location, :description)
     end
 
     # def rental_params
