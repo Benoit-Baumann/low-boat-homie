@@ -36,7 +36,8 @@ class ProfileController < ApplicationController
 
     #DELETE /profile/rental/:id
     def rental_destroy
-        @rental.destroy
+        authorize @rental
+        @rental.destroy?
         respond_to do |format|
           format.html { redirect_to my_rentals_path, notice: 'Rental was successfully destroyed.' }
           format.json { head :no_content }
@@ -55,10 +56,14 @@ class ProfileController < ApplicationController
 
     #GET /profile/boats/:id/edit
     def boat_edit
+      authorize @boat
+        @boat.edit?
     end
 
     #PATCH /profile/boats/:id
     def boat_update
+      authorize @boat
+        @boat.update?
         respond_to do |format|
             if @boat.update(rental_params)
               format.html { redirect_to my_boat_path(@boat), notice: 'Boat was successfully updated.' }
@@ -72,6 +77,8 @@ class ProfileController < ApplicationController
 
     #DELETE /profile/boats/:id
     def boat_destroy
+      authorize @boat
+        @boat.destroy?
         @boat.destroy
         respond_to do |format|
           format.html { redirect_to my_boats_path, notice: 'Boat was successfully destroyed.' }
@@ -79,7 +86,7 @@ class ProfileController < ApplicationController
         end
     end
 
-    private 
+    private
 
     def set_rental
         @rental = Rental.find(params[:id])
