@@ -1,7 +1,21 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 42px;
+  width: 100%;
+  padding-top: 16px;
+  padding-left: 16px
+}
+
+
 .card-boat {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: inline;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 16px;
 }
 
 .card-boat > img {
