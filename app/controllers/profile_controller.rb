@@ -1,5 +1,5 @@
 class ProfileController < ApplicationController
-    before_action :set_rental, only: [:rental_show, :rental_destroy]
+    before_action :set_rental, only: [:rental_show, :rental_delete]
     before_action :set_boat, only: [:boat, :boat_edit, :boat_update, :boat_destroy]
 
     #GET /profile
@@ -23,17 +23,16 @@ class ProfileController < ApplicationController
     end
 
     #DELETE /profile/rental/:id
-    def rental_destroy
+    def rental_delete
+        @user = current_user
+        authorize @user
         @rental.destroy
-        respond_to do |format|
-          format.html { redirect_to my_rentals_path, notice: 'Rental was successfully destroyed.' }
-          format.json { head :no_content }
-        end
+        redirect_to my_rentals_path
     end
 
     #GET /profile/boats
     def boats
-        @boats =  policy_scope(Boat).order(created_at: :desc)
+        @boats = policy_scope(Boat).order(created_at: :desc)
         # @boats = current_user.boats
     end
 
@@ -44,6 +43,16 @@ class ProfileController < ApplicationController
 
     #GET /profile/boats/:id/edit
     def boat_edit
+    end
+
+    def boat_new
+      @boat = Boat.new
+      authorize @boat
+    end
+
+    def boat_create
+      @boat= Boat.new(boat_params)
+      @boat.owner = current_user
     end
 
     #PATCH /profile/boats/:id
@@ -80,7 +89,7 @@ class ProfileController < ApplicationController
     end
 
     def boat_params
-        params.require(:params).permit(:name, :type, :location, :description)
+        params.require(:params).permit(:name, :category, :location, :description, :price)
     end
 
     # def rental_params

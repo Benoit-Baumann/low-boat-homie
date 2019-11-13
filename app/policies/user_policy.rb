@@ -1,5 +1,10 @@
 class UserPolicy < ApplicationPolicy
 
+  def initialize(user, record)
+    @user = user
+    @record = record
+  end
+
     def create?
         true
       end
@@ -16,8 +21,8 @@ class UserPolicy < ApplicationPolicy
         true
       end
 
-      def destroy?
-        record.user == user
+      def rental_delete?
+        true
       end
 
       def update?
