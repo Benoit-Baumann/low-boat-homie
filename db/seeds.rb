@@ -11,7 +11,7 @@ Boat.destroy_all
 User.destroy_all
 
 @benoit = User.new(email: 'benoit@hotmail.fr', password: 'password', first_name: 'Benoit', last_name: 'Baumann', address: '42 rue Mercière, Lyon, France', date_of_birth: '01/01/2000')
-@alex = User.new(email: 'alex@hotmail.fr', password: 'password', first_name: 'Alex', last_name: 'Nordberg', address: '134 rue de Bâle, Strasbourg, France', date_of_birth: '01/01/2000')
+@alex = User.new(email: 'Axel@hotmail.fr', password: 'password', first_name: 'Axel', last_name: 'Nordberg', address: '134 rue de Bâle, Strasbourg, France', date_of_birth: '01/01/2000')
 @julien = User.new(email: 'julien@hotmail.fr', password: 'password', first_name: 'Julien', last_name: 'Gregoire', address: '25 rue de Corse, Bonifacio, France', date_of_birth: '01/01/2000')
 @benoit.save!
 @alex.save!

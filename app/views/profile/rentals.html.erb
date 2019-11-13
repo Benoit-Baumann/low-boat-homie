@@ -1,6 +1,6 @@
-<h1>My rentals</h1>
+<h1>My rentals(<%= @rentals.last.user.email %>)</h1>
 <br>
-<%= current_user.first_name & " " & current_user.last_name %>
 <% @rentals.each do |rental| %>
-    <p><%= rental.id %></p>
+<%= link_to(rental.boat.name, my_rental_path(rental)) %>
+<br>
 <% end %>
