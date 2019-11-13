@@ -18,10 +18,14 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :address %>
-    <%= f.input :date_of_birth %>
+    <%= f.input :first_name,
+                required: true %>
+    <%= f.input :last_name,
+                required: true %>
+    <%= f.input :address,
+                required: true %>
+    <%= f.input :date_of_birth,
+                required: true %>
   </div>
 
   <div class="log">

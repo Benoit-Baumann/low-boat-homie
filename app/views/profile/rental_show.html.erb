@@ -1,0 +1,7 @@
+<h1>My rental</h1>
+<br>
+<h2>First name:<%= @rental.user.first_name %></h2>
+<h2>Last name:<%= @rental.user.last_name %></h2>
+<h2>Price:<%= @rental.price %> $$$$$$$</h2>
+<h2>Boat:<%= @rental.boat.name %></h2>
+<%= link_to("Back to my rentals", my_rentals_path) %>

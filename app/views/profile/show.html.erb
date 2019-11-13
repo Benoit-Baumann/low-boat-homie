@@ -1,7 +1,8 @@
 <h1>My profil</h1>
 <br>
-<%= current_user.first_name %>
-<%= current_user.last_name %>
-<%= current_user.email %>
-<%= current_user.address %>
-<%= current_user.date_of_birth %>
+<h2><%= @user.email %></h2>
+<h2><%= @user.first_name %></h2>
+<h2><%= @user.last_name %></h2>
+<h2><%= @user.address %></h2>
+
+<%= link_to("My rentals", my_rentals_path) %>
