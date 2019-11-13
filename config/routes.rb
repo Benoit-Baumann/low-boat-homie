@@ -6,8 +6,6 @@ Rails.application.routes.draw do
     resources :rentals, only: [:new, :create]
   end
 
-  resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
-
   get '/profile', to: 'profile#show', as: 'profile'
   #Rental routes
   get '/profile/rentals', to: 'profile#rentals', as: 'my_rentals'
