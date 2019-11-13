@@ -18,7 +18,7 @@ class ProfileController < ApplicationController
 
     #GET /profile/rentals/:id
     def rental_show
-      @user = current_user
+        @user = current_user
         authorize @user
     end
 

@@ -3,13 +3,16 @@ class BoatsController < ApplicationController
     # GET /boats
     def index
         if params[:search].nil?
-            # @boats = policy_scope(Boat)
+            #Requis pour éviter erreur Pundit "Pundit::PolicyScopingNotPerformedError in BoatsController#index"
+            #Skiper pundit pour la méthode index et search ???
+            @boats = policy_scope(Boat)
             redirect_to root_path
         else
             @query = params[:search][:query]
             @boats = policy_scope(Boat).near(@query, 20)
 
-            @boats_geo = policy_scope(Boat).near(@query, 20).geocoded
+            #.geocoded nécessaire d'après cours mais résultats similaires sans
+            # @boats_geo = policy_scope(Boat).near(@query, 20).geocoded
 
             @markers = @boats.map do |boat|
                 {
@@ -17,21 +20,21 @@ class BoatsController < ApplicationController
                     lng: boat.longitude
                 }
             end
-
         end
     end
 
     #GET /boats/:id
     def show
         @boat = Boat.find(params[:id])
+        @rental = Rental.new
         authorize @boat
     end
 
     #GET /boats
     def search
         #To be modified later
-        @boats = Boat.all
-        authorize @boats
+        @boats = policy_scope(Boat)
+        # authorize @boats
     end
 
 end
