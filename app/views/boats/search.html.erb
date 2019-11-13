@@ -1,36 +1,37 @@
 <div class="home-header ">
-<div class="home-title">
-  <h1>Louez un bateau avec vos amis!</h1>
-</div>
-<form novalidate="novalidate" class="simple_form search" action="/boats" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-  <div class="search-form-control form-group">
-    <input class="search-bar string required" type="text" name="search[query]" id="search_query" />
-    <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-search"> <p class="search-color"> Search </p></i>
-    </button>
+  <div class="home-title">
+    <h1>Louez un bateau avec vos amis!</h1>
   </div>
-</form>
+  <form novalidate="novalidate" class="simple_form search" action="/boats" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <div class="search-form-control form-group">
+      <input class="search-bar string required" type="text" name="search[query]" id="search_query" />
+      <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-search"> <p class="search-color"> Search </p></i>
+      </button>
+    </div>
+  </form>
 </div>
 
 <div class="container">
-  <h1>All of our boats</h1>
+  <h2>Les bateaux les plus loués</h2>
+  <p>Retrouvez ci-dessous les bateaux avec le plus de succès</p>
   <div class="row">
       <% @boats.each do |boat| %>
         <div class="card-boat">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-boat-infos">
-        <div>
-          <h2><%= boat.name %></h2>
-          <p><%= boat.category %></p>
-          <p><%= boat.description %></p>
-          <p><%= boat.location %></p>
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-boat-infos">
+            <div>
+              <h2><%= boat.name %></h2>
+              <p><%= boat.category %></p>
+              <p><%= boat.description %></p>
+              <p><%= boat.location %></p>
+            </div>
+            <div>
+              <h2 class="card-boat-pricing"><%= boat.price %> €/jour</h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            </div>
+          </div>
         </div>
-        <div>
-          <h2 class="card-boat-pricing"><%= boat.price %> €/jour</h2>
-           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-        </div>
-      </div>
-      </div>
-    <% end %>
-</div>
+      <% end %>
+  </div>
 </div>

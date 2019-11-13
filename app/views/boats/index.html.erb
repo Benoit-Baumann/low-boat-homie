@@ -1,5 +1,22 @@
-<h1>All of our boats</h1>
-<br>
-<% @boats.each do |boat| %>
-    <p><%= boat.name %></p>
-<% end %>
+<div class="container">
+  <h2>Bateaux à louer près de <%= @query %></h2>
+  <div class="row">
+      <% @boats.each do |boat| %>
+        <div class="card-boat">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-boat-infos">
+            <div>
+              <h2><%= boat.name %></h2>
+              <p><%= boat.category %></p>
+              <p><%= boat.description %></p>
+              <p><%= boat.location %></p>
+            </div>
+            <div>
+              <h2 class="card-boat-pricing"><%= boat.price %> €/jour</h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
