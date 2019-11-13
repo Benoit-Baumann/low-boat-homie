@@ -10,16 +10,16 @@ Review.destroy_all
 Boat.destroy_all
 User.destroy_all
 
-@benoit = User.new(email: 'benoit@hotmail.fr', password: 'password', first_name: 'Benoit', last_name: 'Beaman', address: 'rue de lyon', date_of_birth: '01/01/2000')
-@alex = User.new(email: 'alex@hotmail.fr', password: 'password', first_name: 'Alex', last_name: 'Nordberg', address: 'rue de lyon', date_of_birth: '01/01/2000')
-@julien = User.new(email: 'julien@hotmail.fr', password: 'password', first_name: 'Julien', last_name: 'Gregoire', address: 'rue de lyon', date_of_birth: '01/01/2000')
+@benoit = User.new(email: 'benoit@hotmail.fr', password: 'password', first_name: 'Benoit', last_name: 'Baumann', address: '42 rue Mercière, Lyon, France', date_of_birth: '01/01/2000')
+@alex = User.new(email: 'alex@hotmail.fr', password: 'password', first_name: 'Alex', last_name: 'Nordberg', address: '134 rue de Bâle, Strasbourg, France', date_of_birth: '01/01/2000')
+@julien = User.new(email: 'julien@hotmail.fr', password: 'password', first_name: 'Julien', last_name: 'Gregoire', address: '25 rue de Corse, Bonifacio, France', date_of_birth: '01/01/2000')
 @benoit.save!
 @alex.save!
 @julien.save!
 
-peniche = Boat.new(name: 'peniche', owner: @benoit, category: 'peniche', location: 'paris', description: 'tres sympa franchement', price: '50')
-yacht = Boat.new(name: 'yacht', owner: @benoit, category: 'yacht', location: 'paris', description: 'tres grand franchement', price: '10000')
-speedboat = Boat.new(name: 'speedboat', owner: @alex, category: 'speedboat', location: 'paris', description: 'tres rapide franchement', price:'500')
+peniche = Boat.new(name: 'peniche', owner: @benoit, category: 'peniche', location: 'Brest', description: 'tres sympa franchement', price: '50')
+yacht = Boat.new(name: 'yacht', owner: @benoit, category: 'yacht', location: 'Marseille', description: 'tres grand franchement', price: '10000')
+speedboat = Boat.new(name: 'speedboat', owner: @alex, category: 'speedboat', location: 'Bonifacio', description: 'tres rapide franchement', price:'500')
 peniche.save!
 yacht.save!
 speedboat.save!
