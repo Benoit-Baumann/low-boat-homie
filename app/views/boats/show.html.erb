@@ -6,4 +6,5 @@
 
 <h1><%= @boat.name %></h1>
 <h2><%= @boat.description %></h2>
-<%= link_to("Rent this boat :)", new_boat_rental_path) %>
+<%= link_to("Rent this boat :)", new_boat_rental_path(@boat)) %>
+<%= link_to("Back to all boats", boats_path) %>
