@@ -3,6 +3,7 @@ class BoatsController < ApplicationController
     # GET /boats
     def index
         @boats = policy_scope(Boat)
+        @query = params[:search][:query]
     end
 
     #GET /boats/:id

@@ -1,20 +1,24 @@
 class RentalsController < ApplicationController
-  def rental_new
+  def new
     @boat = Boat.find(params[:boat_id])
     @rental = Rental.new
+    authorize @boat
+    authorize @rental
   end
 
-  def rental_create
+  def create
     @rental = Rental.new(rental_params)
     # we need `boat_id` to associate rental with corresponding boat
     @boat = Boat.find(params[:boat_id])
+    authorize @boat
+    authorize @rental
     @rental.boat = @boat
     @rental.user = current_user
     @rental.price = @boat.price
-    if @rental.save
+    if @rental.save!
       redirect_to boat_path(@boat)
     else
-      render :rental_new
+      redirect_to new_boat_rental_path(@boat)
     end
   end
 

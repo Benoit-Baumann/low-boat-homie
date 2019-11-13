@@ -10,7 +10,7 @@ class ProfileController < ApplicationController
 
     #GET /profile/rentals
     def rentals
-        @rentals =  policy_scope(Rental).order(created_at: :desc)
+        @rentals = policy_scope(Rental).order(created_at: :desc)
         # @rentals = current_user.rentals
     end
 
