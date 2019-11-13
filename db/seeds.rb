@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 Rental.destroy_all
 Review.destroy_all
 Boat.destroy_all
@@ -23,7 +16,6 @@ boat3 = Boat.new(name: 'Le rapide', owner: @alex, category: 'Speedboat', locatio
 boat4 = Boat.new(name: 'Le baleno', owner: @benoit, category: 'Catamaran', location: "L'Estaque", description: 'tres sympa franchement', price: '50')
 boat5 = Boat.new(name: 'La truite cendrée', owner: @julien, category: 'Voilier', location: 'Vallon des Auffes, Marseille', description: 'tres grand franchement', price: '10000')
 boat6 = Boat.new(name: 'Le Bélème', owner: @julien, category: 'Optimist', location: 'Bonifacio', description: 'tres rapide franchement', price:'500')
-
 boat1.save!
 boat2.save!
 boat3.save!
@@ -34,7 +26,6 @@ boat6.save!
 rental1 = Rental.new(user: @benoit, boat: boat1, price: '500', date: '01/01/2020')
 rental2 = Rental.new(user: @julien, boat: boat3, price: '1000', date: '01/01/2020')
 rental3 = Rental.new(user: @alex, boat: boat5, price: '50', date: '01/01/2020')
-
 rental1.save!
 rental2.save!
 rental3.save!
