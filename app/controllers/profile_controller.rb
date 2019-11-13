@@ -1,21 +1,25 @@
 class ProfileController < ApplicationController
-    before_action :set_rental, only: [:rental, :rental_destroy]
+    before_action :set_rental, only: [:rental_show, :rental_destroy]
     before_action :set_boat, only: [:boat, :boat_edit, :boat_update, :boat_destroy]
 
     #GET /profile
     def show
-        # @user = current_user
-        authorize current_user
+        @user = current_user
+        authorize @user
     end
 
     #GET /profile/rentals
     def rentals
-        @rentals = policy_scope(Rental).order(created_at: :desc)
-        # @rentals = current_user.rentals
+        # @rentals = policy_scope(Rental).order(created_at: :desc)
+        @user = current_user
+        authorize @user
+        @rentals = current_user.rentals
     end
 
     #GET /profile/rentals/:id
-    def rental
+    def rental_show
+      @user = current_user
+        authorize @user
     end
 
     #DELETE /profile/rental/:id
@@ -68,7 +72,6 @@ class ProfileController < ApplicationController
 
     def set_rental
         @rental = Rental.find(params[:id])
-        authorize @rental
     end
 
     def set_boat
