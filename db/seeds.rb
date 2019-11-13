@@ -17,23 +17,31 @@ User.destroy_all
 @alex.save!
 @julien.save!
 
-peniche = Boat.new(name: 'peniche', owner: @benoit, category: 'peniche', location: 'Brest', description: 'tres sympa franchement', price: '50')
-yacht = Boat.new(name: 'yacht', owner: @benoit, category: 'yacht', location: 'Marseille', description: 'tres grand franchement', price: '10000')
-speedboat = Boat.new(name: 'speedboat', owner: @alex, category: 'speedboat', location: 'Bonifacio', description: 'tres rapide franchement', price:'500')
-peniche.save!
-yacht.save!
-speedboat.save!
+boat1 = Boat.new(name: 'La douce', owner: @benoit, category: 'Peniche', location: 'Brest', description: 'tres sympa franchement', price: '50')
+boat2 = Boat.new(name: 'Le saumon doré', owner: @benoit, category: 'Yacht', location: 'Vieux-port, Marseille', description: 'tres grand franchement', price: '10000')
+boat3 = Boat.new(name: 'Le rapide', owner: @alex, category: 'Speedboat', location: 'Bonifacio', description: 'tres rapide franchement', price:'500')
+boat4 = Boat.new(name: 'Le baleno', owner: @benoit, category: 'Catamaran', location: "L'Estaque", description: 'tres sympa franchement', price: '50')
+boat5 = Boat.new(name: 'La truite cendrée', owner: @julien, category: 'Voilier', location: 'Vallon des Auffes, Marseille', description: 'tres grand franchement', price: '10000')
+boat6 = Boat.new(name: 'Le Bélème', owner: @julien, category: 'Optimist', location: 'Bonifacio', description: 'tres rapide franchement', price:'500')
 
-rental1 = Rental.new(user: @benoit, boat: speedboat, price: '500', date: '01/01/2020')
-rental2 = Rental.new(user: @julien, boat: yacht, price: '1000', date: '01/01/2020')
-rental3 = Rental.new(user: @alex, boat: peniche, price: '50', date: '01/01/2020')
+boat1.save!
+boat2.save!
+boat3.save!
+boat4.save!
+boat5.save!
+boat6.save!
+
+rental1 = Rental.new(user: @benoit, boat: boat1, price: '500', date: '01/01/2020')
+rental2 = Rental.new(user: @julien, boat: boat3, price: '1000', date: '01/01/2020')
+rental3 = Rental.new(user: @alex, boat: boat5, price: '50', date: '01/01/2020')
+
 rental1.save!
 rental2.save!
 rental3.save!
 
-review1 = Review.new(user: @benoit, boat: speedboat, description:"cest vrai qui est rapide")
-review2 = Review.new(user: @julien, boat: yacht, description:"cest vrai qui est grand")
-review3 = Review.new(user: @alex, boat: peniche, description:"cest vrai qui est sympa")
+review1 = Review.new(user: @benoit, boat: boat1, description:"cest vrai qui est rapide")
+review2 = Review.new(user: @julien, boat: boat3, description:"cest vrai qui est grand")
+review3 = Review.new(user: @alex, boat: boat5, description:"cest vrai qui est sympa")
 review1.save!
 review2.save!
 review3.save!
