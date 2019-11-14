@@ -1,4 +1,10 @@
 class BoatPolicy < ApplicationPolicy
+  attr_reader :user, :record
+
+  def initialize(user, record)
+    @user = user
+    @record = record
+  end
 
     def create?
         true
@@ -9,35 +15,11 @@ class BoatPolicy < ApplicationPolicy
       end
 
       def destroy?
-        true
-       end
+        record.owner == user
+      end
 
       def update?
-        true
-      end
-
-      def boat_new?
-        true
-      end
-
-      def boat_show?
-        true
-      end
-
-      def boat_create?
-        true
-      end
-
-      def boat_delete?
-        true
-      end
-
-      def boat_edit?
-        true
-      end
-
-      def boat_update?
-        true
+        record.owner == user
       end
 
       def boats?
@@ -45,14 +27,6 @@ class BoatPolicy < ApplicationPolicy
       end
 
       def boat?
-        true
-      end
-
-      def search?
-        true
-      end
-
-      def index?
         true
       end
 

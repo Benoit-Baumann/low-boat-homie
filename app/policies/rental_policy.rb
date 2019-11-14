@@ -10,24 +10,24 @@ class RentalPolicy
     true
   end
 
-  def edit?
-    true
-  end
-
-  def update?
-    true
-  end
-
   def show?
-    true
-  end
-
-  def index?
-    true
+    record.user == user
   end
 
   def destroy?
-    true
+    record.user == user
+  end
+
+  def update?
+    record.user == user
+  end
+
+  def index?
+    record.user == user
+  end
+
+  def edit?
+    record.user == user
   end
 
   def new?
