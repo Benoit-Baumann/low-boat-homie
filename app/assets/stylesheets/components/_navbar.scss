@@ -38,6 +38,16 @@
   height: 72px;
 }
 
+.dropdown-item:hover {
+  color:#cc2121;
+}
+
+.dropdown-menu {
+  opacity: 0.9;
+  border-radius: 6px;
+  border: none;
+}
+
 #navbarDropdown {
   transition: 0.15s ease-in-out;
 
