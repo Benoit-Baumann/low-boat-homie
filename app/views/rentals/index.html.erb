@@ -1,8 +1,18 @@
-<h1>My rentals</h1>
-<br>
-<% @rentals.each do |rental| %>
-(<%= @rentals.last.user.email %>)
-<%= link_to(rental.boat.name, rental_path(rental)) %>
-<br>
-<% end %>
+<div class="container">
+  <h1>My rentals</h1>
+  <br>
+   <div>
+    <ul>
+      <div class="d-flex p-2 align-content-start flex-wrap justify-content-around">
+     <% @rentals.each do |rental| %>
+       <li class="info-rental" style="list-style: none;">
+          <%= link_to(rental.boat.name, rental_path(rental)) %>
+          <i class="fas fa-anchor"></i>
+        </li>
+      <% end %>
+      </div>
+    </ul>
+   </div>
+</div>
+
 <%= link_to('Back to home', root_path) %>

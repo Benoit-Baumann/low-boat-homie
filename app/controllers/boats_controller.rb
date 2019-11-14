@@ -1,17 +1,15 @@
 class BoatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show, :search]
 
   before_action :set_boat, only: [:boat, :edit, :update, :destroy]
 
     # GET /boats
     def index
-        if params[:search].nil?
-            #Requis pour éviter erreur Pundit "Pundit::PolicyScopingNotPerformedError in BoatsController#index"
-            #Skiper pundit pour la méthode index et search ???
-            @boats = policy_scope(Boat)
-            redirect_to root_path
-        else
-            @query = params[:search][:query]
-            @boats = policy_scope(Boat).near(@query, 20)
+        if params[:city].present?
+            @city = params[:city].capitalize
+            @distance = params[:distance].to_i
+
+            @boats = policy_scope(Boat).near(@city, @distance)
 
             #.geocoded nécessaire d'après cours mais résultats similaires sans
             # @boats_geo = policy_scope(Boat).near(@query, 20).geocoded
@@ -23,6 +21,11 @@ class BoatsController < ApplicationController
                     infoWindow: render_to_string(partial: "info_window", locals: { boat: boat })
                 }
             end
+        else 
+            #Requis pour éviter erreur Pundit "Pundit::PolicyScopingNotPerformedError in BoatsController#index"
+            #Skiper pundit pour la méthode index et search ???
+            @boats = policy_scope(Boat)
+            redirect_to root_path
         end
     end
 
@@ -35,7 +38,6 @@ class BoatsController < ApplicationController
 
     #GET /boats
     def search
-        #To be modified later
         @boats = policy_scope(Boat)
         # authorize @boats
     end
