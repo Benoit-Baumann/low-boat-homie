@@ -5,9 +5,8 @@
   z-index: 10;
   top: 0;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   height: $navbar-height;
-  z-index: 999;
 }
 
 .navbar-lewagon .navbar-collapse {
