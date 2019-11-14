@@ -24,7 +24,9 @@
                 required: true %>
     <%= f.input :address,
                 required: true %>
-    <%= f.input :date_of_birth,
+    <%= f.input :date_of_birth, 
+                start_year: Date.today.year - 110,
+                end_year: Date.today.year,
                 required: true %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
