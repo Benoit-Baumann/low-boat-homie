@@ -5,7 +5,7 @@
 .search-bar {
   border: 1px solid white;
   border-radius: 8px;
-  width: 33%;
+  width: 300px;
   height: 52px;
   text-align:center;
   font-family: $body-font;
@@ -19,6 +19,7 @@
   opacity: 50%;
   height: 52px;
   transition: 0.5s;
+  margin-left: 10px;
 }
 
 .btn-search:hover {
@@ -47,3 +48,10 @@
   font-family: $body-font;
 }
 
+.search-div {
+  text-align: center;
+}
+
+.ap-dropdown-menu {
+  background-color: rgba(255, 255, 255, 0.7)
+}
