@@ -9,23 +9,7 @@
 <div class="container mt-4">
   <h2>Les bateaux les plus loués</h2>
   <p>Retrouvez ci-dessous les bateaux avec le plus de succès</p>
-  <div class="row cards">
-      <% @boats.each do |boat| %>
-        <div class="card-boat">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-boat-infos">
-            <div>
-              <h2><%= boat.name %></h2>
-              <p><%= boat.category %></p>
-              <p><%= boat.description %></p>
-              <p><%= boat.location %></p>
-            </div>
-            <div>
-              <h2 class="card-boat-pricing"><%= boat.price %> €/jour</h2>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-            </div>
-          </div>
-        </div>
-      <% end %>
-  </div>
+
+  <%= render partial: 'boat_cards.html.erb', locals: {boats: @boats} %>
+  
 </div>
