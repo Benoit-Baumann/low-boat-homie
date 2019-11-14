@@ -21,7 +21,7 @@ class BoatsController < ApplicationController
                     infoWindow: render_to_string(partial: "info_window", locals: { boat: boat })
                 }
             end
-        else 
+        else
             #Requis pour éviter erreur Pundit "Pundit::PolicyScopingNotPerformedError in BoatsController#index"
             #Skiper pundit pour la méthode index et search ???
             @boats = policy_scope(Boat)

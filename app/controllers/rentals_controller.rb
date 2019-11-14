@@ -13,7 +13,6 @@ class RentalsController < ApplicationController
     @rental = Rental.new(rental_params)
     # we need `boat_id` to associate rental with corresponding boat
     @boat = Boat.find(params[:boat_id])
-    authorize @boat
     authorize @rental
     @rental.boat = @boat
     @rental.user = current_user
@@ -31,13 +30,12 @@ class RentalsController < ApplicationController
         @user = current_user
         policy_scope(Rental).order(created_at: :desc)
         @rentals = current_user.rentals
-        authorize @rentals
     end
 
     #GET /profile/rentals/:id
     def show
         @user = current_user
-        authorize @user
+        authorize @rental
     end
 
     def edit
