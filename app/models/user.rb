@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :boats, foreign_key: :owner_id
   has_many :rentals
+  mount_uploader :photo, PhotoUploader
+
+  def full_name
+    "#{first_name.capitalize} #{last_name.capitalize}"
+  end
 end

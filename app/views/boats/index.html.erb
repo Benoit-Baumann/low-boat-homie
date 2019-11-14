@@ -18,7 +18,12 @@
             </div>
             <div>
               <h2 class="card-boat-pricing"><%= boat.price %> €/jour</h2>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+              <% if current_user.photo? %>
+                <% avatar_url = cl_image_path current_user.photo, width: 400, height: 500, crop: :fill %>
+              <% else %>
+                <% avatar_url = image_path 'default_avatar.svg' %>
+              <% end %>
+              <img src="<%= avatar_url %>" class="card-trip-user avatar-bordered" />
             </div>
           </div>
         </div>
