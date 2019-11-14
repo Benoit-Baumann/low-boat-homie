@@ -1,10 +1,12 @@
-<h1>My profil</h1>
+<h1>Mon profil</h1>
 <br>
 <h2><%= @user.email %></h2>
 <h2><%= @user.first_name %></h2>
 <h2><%= @user.last_name %></h2>
 <h2><%= @user.address %></h2>
 
-<%= link_to("My rentals", rentals_path) %>
+<%= link_to "Voir mes locations", rentals_path %>
 <br>
-<%= link_to("My boats", my_boats_path) %>
+<%= link_to "Voir mes bateaux", my_boats_path %>
+<br>
+<%= link_to 'Editer mon profil', edit_user_registration_path  %>
