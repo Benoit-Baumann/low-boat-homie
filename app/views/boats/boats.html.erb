@@ -1,9 +1,6 @@
-<h1>My boats</h1>
-<br>
-<h2><%= current_user.first_name %>  <%= current_user.last_name %></h2>
-<% @boats.each do |boat| %>
-<%= link_to(boat.name, my_boat_path(boat)) %>
-<br>
-<% end %>
+<div class="container mt-4">
+  <h2>Mes Bateaux</h2>
 
-<%= link_to('NEW BOAT', new_boat_path) %>
+  <%= render partial: 'boat_cards', locals: {boats: @boats} %>
+  <%= link_to('NEW BOAT', new_boat_path) %>
+</div>
