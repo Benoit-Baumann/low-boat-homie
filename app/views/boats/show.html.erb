@@ -1,3 +1,4 @@
+<%= if @boat.user == current_user %>
 <h1><%= @boat.name %></h1>
 <h2><%= @boat.description %></h2>
 <%= link_to("Rent this boat", new_boat_rental_path(@boat)) %>
