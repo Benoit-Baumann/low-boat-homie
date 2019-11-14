@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <h2>Bateaux à louer près de <%= @query %></h2>
+  <h2>Bateaux à louer près de <%= @city %></h2>
   <div class="row cards">
       <% @boats.each do |boat| %>
         <% if boat.photo? %>
