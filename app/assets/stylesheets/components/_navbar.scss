@@ -37,3 +37,12 @@
 .logo {
   height: 72px;
 }
+
+#navbarDropdown {
+  transition: 0.15s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+  }
+}
