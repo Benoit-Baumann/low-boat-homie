@@ -9,11 +9,43 @@ class BoatPolicy < ApplicationPolicy
       end
 
       def destroy?
-        record.user == user
-      end
+        true
+       end
 
       def update?
-        record.user == user
+        true
+      end
+
+      def boat_new?
+        true
+      end
+
+      def boat_show?
+        true
+      end
+
+      def boat_create?
+        true
+      end
+
+      def boat_delete?
+        true
+      end
+
+      def boat_edit?
+        true
+      end
+
+      def boat_update?
+        true
+      end
+
+      def boats?
+        true
+      end
+
+      def boat?
+        true
       end
 
       def search?

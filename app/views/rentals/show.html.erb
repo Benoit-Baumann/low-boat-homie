@@ -4,7 +4,9 @@
 <h2>Last name:<%= @rental.user.last_name %></h2>
 <h2>Price:<%= @rental.price %> $$$$$$$</h2>
 <h2>Boat:<%= @rental.boat.name %></h2>
-<%= link_to("Back to my rentals", my_rentals_path) %>
-<%= link_to("Delete my rental", delete_my_rental_path(@rental),
+<h2>Date:<%= @rental.date %></h2>
+<%= link_to("Edit my rental", edit_rental_path(@rental)) %>
+<%= link_to("Delete my rental", rental_path(@rental),
       method: :delete,
       data: { confirm: "Are you sure?" }) %>
+<%= link_to("Back to my rentals", rentals_path) %>

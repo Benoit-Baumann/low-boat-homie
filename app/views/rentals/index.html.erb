@@ -2,6 +2,7 @@
 <br>
 <% @rentals.each do |rental| %>
 (<%= @rentals.last.user.email %>)
-<%= link_to(rental.boat.name, my_rental_path(rental)) %>
+<%= link_to(rental.boat.name, rental_path(rental)) %>
 <br>
 <% end %>
+<%= link_to('Back to home', root_path) %>
