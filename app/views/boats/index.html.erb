@@ -1,5 +1,5 @@
 <div class="custom-container">
-  <h1 class="">Bateaux à louer près de <%= @city %></h1>
+  <h1 class="">Bateaux à louer près de <%= @city.split(' ').map {|w| w.capitalize }.join( ' ') %></h1>
   <br>
   <div id="search-results-container">
     <%= render partial: 'boat_cards', locals: {boats: @boats} %>
