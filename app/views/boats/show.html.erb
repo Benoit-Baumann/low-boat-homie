@@ -2,7 +2,12 @@
 <div class="container mt-5">
   <div class="card-product justify-content-between">
     <div class="d-flex align-items-center">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <% if @boat.photo? %>
+        <% background_url = cl_image_path boat.photo, width: 400, height: 500, crop: :fill %>
+    <% else %>
+        <% background_url = image_path 'boat.jpg' %>
+    <% end %>
+    <img src="<%= background_url %>" />
     <div class="card-product-infos">
       <h2><%= @boat.name %></h2>
       <p><%= @boat.description %></p>
@@ -18,16 +23,6 @@
     </div>
   </div>
 </div>
-
-<h1><%= @boat.name %></h1>
-<h2>Name:<%= @boat.name %></h2>
-<h2>Owner:<%= @boat.owner.first_name %></h2>
-<%= link_to("Edit my boat", edit_boat_path(@boat)) %>
-<%= link_to("Delete my boat", boat_path(@boat),
-      method: :delete,
-      data: { confirm: "Are you sure?" }) %>
-<%= link_to("Back to my boats", my_boats_path) %>
-
 <% else %>
 <h1><%= @boat.name %></h1>
 <h2><%= @boat.description %></h2>

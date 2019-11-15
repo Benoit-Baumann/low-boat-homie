@@ -9,7 +9,7 @@ class BoatsController < ApplicationController
             @city = params[:city].capitalize
             @distance = params[:distance].to_i
 
-            @boats = policy_scope(Boat).near(@city, @distance)
+            @boats = policy_scope(Boat).near(@city, @distance).where("boats.owner_id != ?", current_user.id)
 
             #.geocoded nécessaire d'après cours mais résultats similaires sans
             # @boats_geo = policy_scope(Boat).near(@query, 20).geocoded
@@ -76,8 +76,8 @@ class BoatsController < ApplicationController
     #DELETE /profile/boats/:id
     def destroy
       authorize @boat
-        @boat.destroy
-        redirect_to my_boats_path
+      @boat.destroy
+      redirect_to my_boats_path
     end
 
     private
