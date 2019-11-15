@@ -64,13 +64,13 @@ class BoatsController < ApplicationController
       authorize @boat
       @boat.owner = current_user
       @boat.save!
-      redirect_to my_boats_path
+      redirect_to boat_path
     end
 
     #PATCH /profile/boats/:id
     def update
           @boat.update(boat_params)
-          redirect_to my_boat_path(@boat)
+          redirect_to boat_path(@boat)
     end
 
     #DELETE /profile/boats/:id
