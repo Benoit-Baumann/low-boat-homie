@@ -25,4 +25,7 @@
 <%= link_to("Delete my boat", boat_path(@boat),
       method: :delete,
       data: { confirm: "Are you sure?" }) %>
-<%= link_to("Back to my boats", my_boats_path) %>
+<div class="d-flex justify-content-center location-button">
+<p class="btn-log"><%= link_to("Back to my boats", my_boats_path) %></p>
+</div>
+
