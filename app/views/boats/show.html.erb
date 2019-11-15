@@ -24,8 +24,29 @@
   </div>
 </div>
 <% else %>
-<h1><%= @boat.name %></h1>
+<div class="container mt-5">
+  <div class="card-product justify-content-between">
+    <div class="d-flex align-items-center">
+    <% if @boat.photo? %>
+        <% background_url = cl_image_path boat.photo, width: 400, height: 500, crop: :fill %>
+    <% else %>
+        <% background_url = image_path 'boat.jpg' %>
+    <% end %>
+    <img src="<%= background_url %>" />
+    <div class="card-product-infos">
+      <h2><%= @boat.name %></h2>
+      <p><%= @boat.description %></p>
+    </div>
+    </div>
+    <div class="text-right mr-4 align-items-center">
+    <%= link_to("Rent this boat", new_boat_rental_path(@boat), class: 'btn btn-primary mb-4') %>
+    <br>
+    <%= link_to("Back to all boats", request.referer, class: 'btn btn-primary') %>
+    </div>
+  </div>
+</div>
+<!-- <h1><%= @boat.name %></h1>
 <h2><%= @boat.description %></h2>
 <%= link_to("Rent this boat", new_boat_rental_path(@boat)) %>
-<%= link_to("Back to all boats", request.referer) %>
+<%= link_to("Back to all boats", request.referer) %> -->
 <% end %>
