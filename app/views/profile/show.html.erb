@@ -12,7 +12,13 @@
       <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     </header>
     <div class="profile-bio">
+      <h4><strong>Email:</strong></h4>
       <h4><%= @user.email %></h4>
+      <br>
+      <h4><strong>Date of birth:</strong></h4>
+      <h4><%= @user.date_of_birth %></h4>
+      <br>
+      <h4><strong>Address:</strong></h4>
       <h4><%= @user.address %></h4>
     </div>
   </aside>
