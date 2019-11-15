@@ -2,10 +2,9 @@
   display: grid;
   // grid-template-columns: 1fr 1fr 1fr;
   grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
-  grid-gap: 42px;
+  grid-gap: 27px;
   width: 100%;
-  padding-top: 16px;
-  padding-left: 16px;
+  padding-left: 46px;
 }
 
 .card-boat {
