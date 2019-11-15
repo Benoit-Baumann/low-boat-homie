@@ -8,3 +8,27 @@
     margin-top: 20px;
     display: flex;
   }
+
+  .rental-icon {
+  display:grid;
+}
+
+.info-rental {
+  display:flex;
+}
+
+.fa-anchor {
+  padding-top: 40px;
+}
+
+// .rental-photo {
+//   height: 100%;
+//   width: 150px;
+//   object-fit: cover;
+// }
+
+.rental-photo img {
+  height: 100%;
+  width: 318px;
+  // object-fit: cover;
+}
