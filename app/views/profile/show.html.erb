@@ -1,23 +1,23 @@
-<div class="containers">
+<div class="custom-container">
   <div class="deconstructed">
-  Mon profil
-  <div>Mon profil</div>
-  <div>Mon profil</div>
-  <div>Mon profil</div>
-  <div>Mon profil</div>
-</div>
-<aside class="profile-card">
-  <header>
-      <%= image_tag current_user.photo.url(:bright_face), class: "avatar-extra-large" %>
-    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-
-  </header>
-  <div class="profile-bio">
-    <h4><%= @user.email %></h4>
-    <h4><%= @user.address %></h4>
+    Mon profil
+    <div>Mon profil</div>
+    <div>Mon profil</div>
+    <div>Mon profil</div>
+    <div>Mon profil</div>
   </div>
-</aside>
-<div class="d-flex justify-content-center profile-links">
-<p class="btn-log"><%= link_to "Voir mes locations", rentals_path %></p><p class="btn-log"><%= link_to "Voir mes bateaux", my_boats_path %></p><p class="btn-log"><%= link_to 'Editer mon profil', edit_user_registration_path  %></p>
+  <aside class="profile-card">
+    <header>
+      <%= image_tag current_user.photo.url(:bright_face), class: "avatar-extra-large" %>
+      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+    </header>
+    <div class="profile-bio">
+      <h4><%= @user.email %></h4>
+      <h4><%= @user.address %></h4>
+    </div>
+  </aside>
+</div>
+  <div class="d-flex justify-content-center profile-links">
+  <p class="btn-log"><%= link_to "Voir mes locations", rentals_path %></p><p class="btn-log"><%= link_to "Voir mes bateaux", my_boats_path %></p><p class="btn-log"><%= link_to 'Editer mon profil', edit_user_registration_path  %></p>
 </div>
 

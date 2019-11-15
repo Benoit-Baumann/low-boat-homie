@@ -46,13 +46,17 @@
 .card-boat h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: 0 0 2px 0;
 }
 
 .card-boat p {
   font-size: 16px;
   opacity: .7;
   margin: 0;
+}
+
+.boat-location {
+  font-style: italic;
 }
 
 .card-boat .card-boat-infos {
