@@ -1,10 +1,6 @@
-<h1>O</h1>
-<h1>O</h1>
-<h1>O</h1>
-<h1>O</h1>
-<h1>O</h1>
-
-<%= simple_form_for [@boat, @rental] do |f| %>
-  <%= f.input :date %>
-  <%= f.submit "BOOK THIS DATE", class: "btn btn-primary" %>
-<% end %>
+<div class="custom-container">
+  <%= simple_form_for [@boat, @rental] do |f| %>
+    <%= f.input :date %>
+    <%= f.submit "Réserver", class: "btn btn-primary" %>
+  <% end %>
+</div>

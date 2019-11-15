@@ -15,17 +15,17 @@
   <%= link_to(<i class="fas fa-edit"></i>, edit_boat_path(@boat), class: 'btn btn-primary') %>
     <%= link_to("Delete my boat", boat_path(@boat),
           method: :delete,
-          data: { confirm: "Are you sure?" }) %>
+          data: { confirm: "Etes-vous sûr?" }) %>
 </div>
 
 <br>
 <h2>Name:<%= @boat.name %></h2>
 <h2>Owner:<%= @boat.owner.first_name %></h2>
-<%= link_to("Edit my boat", edit_boat_path(@boat)) %>
-<%= link_to("Delete my boat", boat_path(@boat),
+<%= link_to("Editer", edit_boat_path(@boat)) %>
+<%= link_to("Supprimer", boat_path(@boat),
       method: :delete,
-      data: { confirm: "Are you sure?" }) %>
+      data: { confirm: "Etes-vous sûr?" }) %>
 <div class="d-flex justify-content-center location-button">
-<p class="btn-log"><%= link_to("Back to my boats", my_boats_path) %></p>
+<p class="btn-log"><%= link_to("Retour à mes bateaux", my_boats_path) %></p>
 </div>
 
