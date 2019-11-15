@@ -6,10 +6,10 @@
   <%= render partial: 'search_bar' %>
 </div>
 
-<div class="container mt-4">
+
   <h2>Les bateaux les plus loués</h2>
   <p>Retrouvez ci-dessous les bateaux avec le plus de succès</p>
-
+<div class="container mt-4">
   <%= render partial: 'boat_cards.html.erb', locals: {boats: @boats} %>
-  
+
 </div>
