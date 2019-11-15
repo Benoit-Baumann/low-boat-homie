@@ -8,6 +8,12 @@ kevin_avatar = Pathname.new("#{Rails.root}/app/assets/images/kevcha2.jpg").open
 benjamin_avatar = Pathname.new("#{Rails.root}/app/assets/images/benji.png").open
 mac_avatar = Pathname.new("#{Rails.root}/app/assets/images/mac.jpg").open
 
+joseph_bateau = Pathname.new("#{Rails.root}/app/assets/images/jo-PussyPalace.jpg").open
+kevin_bateau = Pathname.new("#{Rails.root}/app/assets/images/kev-pussyslayer.jpg").open
+benjamin_bateau = Pathname.new("#{Rails.root}/app/assets/images/ben-Treasurecolor.jpg").open
+
+
+
 @benoit = User.new(email: 'benoit@hotmail.fr', password: 'password', first_name: 'Benoit', last_name: 'Baumann', address: '42 rue Mercière, Lyon, France', date_of_birth: '02/04/1990')
 @alex = User.new(email: 'Axel@hotmail.fr', password: 'password', first_name: 'Axel', last_name: 'Nordberg', address: '134 rue de Bâle, Strasbourg, France', date_of_birth: '01/01/1991')
 @julien = User.new(email: 'julien@hotmail.fr', password: 'password', first_name: 'Julien', last_name: 'Gregoire', address: '25 rue de Corse, Bonifacio, France', date_of_birth: '04/05/1990')
@@ -24,9 +30,9 @@ mac_avatar = Pathname.new("#{Rails.root}/app/assets/images/mac.jpg").open
 @kevin.save!
 @benjamin.save!
 
-boat1 = Boat.new(name: 'La Douce', owner: @kevin, category: 'Peniche', location: 'Brest', description: 'tres sympa franchement', price: '800')
-boat2 = Boat.new(name: 'Le Saumon Doré', owner: @joseph, category: 'Yacht', location: 'Vieux-port, Marseille', description: 'tres grand franchement', price: '5000')
-boat3 = Boat.new(name: 'Le Rapide', owner: @benjamin, category: 'Speedboat', location: 'Bonifacio', description: 'tres rapide franchement', price:'1400')
+boat1 = Boat.new(name: 'PussySlayer', owner: @kevin, category: 'Yacht', location: 'Piscine Municipale, St-Etienne', description: 'tres sympa franchement', price: '3500', photo: kevin_bateau)
+boat2 = Boat.new(name: 'PussyPalace', owner: @joseph, category: 'Voilier', location: 'Vieux-port, Toulouse', description: 'tres grand franchement', price: '5000', photo: joseph_bateau)
+boat3 = Boat.new(name: 'Le Rapide', owner: @benjamin, category: 'Speedboat', location: 'Bonifacio', description: 'tres rapide franchement', price:'1400', photo: benjamin_bateau)
 boat4 = Boat.new(name: 'Le Baleno', owner: @mac, category: 'Catamaran', location: "L'Estaque", description: 'tres sympa franchement', price: '1500')
 boat5 = Boat.new(name: 'La Truite Cendrée', owner: @joseph, category: 'Voilier', location: 'Vallon des Auffes, Marseille', description: 'tres grand franchement', price: '2000')
 boat6 = Boat.new(name: 'Le Bélème', owner: @mac, category: 'Aéroglisseur', location: 'Bonifacio', description: 'tres rapide franchement', price:'1100')
