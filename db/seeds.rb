@@ -30,8 +30,8 @@ benjamin_bateau = Pathname.new("#{Rails.root}/app/assets/images/ben-Treasurecolo
 @kevin.save!
 @benjamin.save!
 
-boat1 = Boat.new(name: 'PussySlayer', owner: @kevin, category: 'Yacht', location: 'Piscine Municipale, St-Etienne', description: 'tres sympa franchement', price: '3500', photo: kevin_bateau)
-boat2 = Boat.new(name: 'PussyPalace', owner: @joseph, category: 'Voilier', location: 'Vieux-port, Toulouse', description: 'tres grand franchement', price: '5000', photo: joseph_bateau)
+boat1 = Boat.new(name: 'P****Slayer', owner: @kevin, category: 'Yacht', location: 'Piscine Municipale, St-Etienne', description: 'tres sympa franchement', price: '3500', photo: kevin_bateau)
+boat2 = Boat.new(name: 'P****Palace', owner: @joseph, category: 'Voilier', location: 'Vieux-port, Toulouse', description: 'tres grand franchement', price: '5000', photo: joseph_bateau)
 boat3 = Boat.new(name: 'Le Rapide', owner: @benjamin, category: 'Speedboat', location: 'Bonifacio', description: 'tres rapide franchement', price:'1400', photo: benjamin_bateau)
 boat4 = Boat.new(name: 'Le Baleno', owner: @mac, category: 'Catamaran', location: "L'Estaque", description: 'tres sympa franchement', price: '1500')
 boat5 = Boat.new(name: 'La Truite Cendrée', owner: @joseph, category: 'Voilier', location: 'Vallon des Auffes, Marseille', description: 'tres grand franchement', price: '2000')
