@@ -45,7 +45,7 @@ class RentalsController < ApplicationController
     def update
       authorize @rental
         @rental.update(rental_params)
-        redirect_to rental_path(@rental)
+        redirect_to rentals_path(@rental)
     end
 
     #DELETE /profile/rental/:id

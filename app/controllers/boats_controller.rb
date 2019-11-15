@@ -69,7 +69,7 @@ class BoatsController < ApplicationController
       authorize @boat
       @boat.owner = current_user
       @boat.save!
-      redirect_to boat_path
+      redirect_to boat_path(@boat)
     end
 
     #PATCH /profile/boats/:id
