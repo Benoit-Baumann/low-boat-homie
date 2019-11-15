@@ -8,5 +8,7 @@
 </div>
 
   <%= render partial: 'boat_cards', locals: {boats: @boats} %>
-  <%= link_to('NEW BOAT', new_boat_path) %>
+  <div class="d-flex justify-content-center location-button">
+  <p class="btn-log"><%= link_to('Nouveau Bateau', new_boat_path) %></p>
+</div>
 </div>
