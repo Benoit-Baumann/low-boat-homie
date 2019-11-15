@@ -9,10 +9,15 @@ class BoatsController < ApplicationController
             @city = params[:city].capitalize
             @distance = params[:distance].to_i
 
-            @boats = policy_scope(Boat).near(@city, @distance).where("boats.owner_id != ?", current_user.id)
+            if user_signed_in?
+              @boats = policy_scope(Boat).near(@city, @distance).where("boats.owner_id != ?", current_user.id)
+            else
+              @boats = policy_scope(Boat).near(@city, @distance)
+            end
 
-            #.geocoded nécessaire d'après cours mais résultats similaires sans
-            # @boats_geo = policy_scope(Boat).near(@query, 20).geocoded
+            if @boats.empty?
+              render 'search', error: 'Aucun bateau trouvé...' 
+            end
 
             @markers = @boats.map do |boat|
                 {
@@ -24,8 +29,8 @@ class BoatsController < ApplicationController
         else
             #Requis pour éviter erreur Pundit "Pundit::PolicyScopingNotPerformedError in BoatsController#index"
             #Skiper pundit pour la méthode index et search ???
-            @boats = policy_scope(Boat)
-            redirect_to root_path
+            # @boats = policy_scope(Boat)
+            render 'search'
         end
     end
 

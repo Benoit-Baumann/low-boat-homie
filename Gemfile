@@ -20,7 +20,6 @@ gem 'carrierwave', '~> 1.2'
 gem 'pundit'
 gem 'geocoder'
 gem 'awesome_print'
-gem 'faker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -33,5 +32,5 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
-  # gem 'faker'
+  gem 'faker'
 end

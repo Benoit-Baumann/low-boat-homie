@@ -1,17 +1,19 @@
 <div class="search-div">
-<%= form_tag boats_path, class: 'd-inline-flex search-form-control form-group', method: :get do %>
-   <%= text_field_tag :city,
-   params[:city],
-   class: "search-bar",
-   id: 'boat-location',
-   placeholder: "Entrez une ville"
-   %>
-   <%= select_tag :distance,
-   options_for_select([['5km' ,'5'], ['10km' ,'10'], ['25km' ,'25'], ['50km' ,'50']]),
-   class: "distance-search"
-   %>
-   <%= button_tag(type: "submit", class: "btn-search") do %>
-       Search <i class="fas fa-search"></i>
-   <% end %>
-<% end %>
+    <%= form_tag boats_path, class: 'd-inline-flex search-form-control form-group', method: :get do |f| %>
+        <%# <%= f.error_notification %> %>
+        <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %> %>
+        <%= text_field_tag :city,
+        params[:city],
+        class: "search-bar",
+        id: 'boat-location',
+        placeholder: "Entrez une ville"
+        %>
+        <%= select_tag :distance,
+        options_for_select([['5km' ,'5'], ['10km' ,'10'], ['25km' ,'25'], ['50km' ,'50']]),
+        class: "distance-search"
+        %>
+        <%= button_tag(type: "submit", class: "btn-search") do %>
+            Search <i class="fas fa-search"></i>
+        <% end %>
+    <% end %>
 </div>
