@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   
-  # before_save :set_random_avatar
+  before_save :set_random_avatar
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -15,12 +15,12 @@ class User < ApplicationRecord
     "#{first_name.capitalize} #{last_name.capitalize}"
   end
 
+  private
+
   def set_random_avatar
-    puts 'coucou'
     unless photo?
-      puts 'hello'
       avatar_url = Dir["#{Rails.root}/app/assets/images/avatars/*"].sample
-      photo = Rails.root.join(avatar_url)
+      self.photo = Pathname.new(Rails.root.join(avatar_url)).open
       save
     end
   end
