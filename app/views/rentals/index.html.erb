@@ -12,7 +12,13 @@
       <div class="d-flex p-2 align-content-start flex-wrap justify-content-around">
      <% @rentals.each do |rental| %>
        <li class="info-rental" style="list-style: none;">
-          <%= link_to(rental.boat.name, rental_path(rental)) %>
+          <div class="rental-title"><%= rental.boat.name %></div>
+          <div class="rental-info">
+            <%= rental.boat.description %>
+            <br>
+            <%= rental.date %>
+          </div>
+          <%= link_to("", edit_rental_path(rental), class: 'fas fa-edit') %>
           <i class="fas fa-anchor"></i>
         </li>
       <% end %>
