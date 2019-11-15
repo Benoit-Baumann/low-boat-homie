@@ -19,9 +19,16 @@ class User < ApplicationRecord
 
   def set_random_avatar
     unless photo?
-      avatar_url = Dir["#{Rails.root}/app/assets/images/avatars/*"].sample
-      self.photo = Pathname.new(Rails.root.join(avatar_url)).open
-      save
+      # if first_name == 'Joseph'
+
+      # elsif first_name == 'Kevin'
+
+      # elsif first_name == 'Benjamin'
+
+      # else
+        avatar_url = Dir["#{Rails.root}/app/assets/images/avatars/*"].sample
+        self.photo = Pathname.new(Rails.root.join(avatar_url)).open
+        save
     end
   end
 end
