@@ -1,5 +1,36 @@
-<%= if @boat.user == current_user %>
+<% if @boat.owner == current_user %>
+<div class="container mt-5">
+  <div class="card-product justify-content-between">
+    <div class="d-flex align-items-center">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h2><%= @boat.name %></h2>
+      <p><%= @boat.description %></p>
+    </div>
+    </div>
+    <div class="text-right mr-4 align-items-center">
+    <%= link_to("", edit_boat_path(@boat), class: 'fas fa-edit fa-2x mr-4 mb-4') %>
+    <br>
+    <%= link_to("", boat_path(@boat),
+            class: 'far fa-trash-alt fa-2x mr-4 mt-4',
+            method: :delete,
+            data: { confirm: "Are you sure?" }) %>
+    </div>
+  </div>
+</div>
+
+<h1><%= @boat.name %></h1>
+<h2>Name:<%= @boat.name %></h2>
+<h2>Owner:<%= @boat.owner.first_name %></h2>
+<%= link_to("Edit my boat", edit_boat_path(@boat)) %>
+<%= link_to("Delete my boat", boat_path(@boat),
+      method: :delete,
+      data: { confirm: "Are you sure?" }) %>
+<%= link_to("Back to my boats", my_boats_path) %>
+
+<% else %>
 <h1><%= @boat.name %></h1>
 <h2><%= @boat.description %></h2>
 <%= link_to("Rent this boat", new_boat_rental_path(@boat)) %>
 <%= link_to("Back to all boats", request.referer) %>
+<% end %>

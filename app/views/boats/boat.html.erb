@@ -6,6 +6,10 @@
     <h2>Product name</h2>
     <p>Product description with <strong>relevant info</strong> only.</p>
   </div>
+  <%= link_to(<i class="fas fa-edit"></i>, edit_boat_path(@boat), class: 'btn btn-primary') %>
+    <%= link_to("Delete my boat", boat_path(@boat),
+          method: :delete,
+          data: { confirm: "Are you sure?" }) %>
 </div>
 
 <br>
