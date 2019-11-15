@@ -1,72 +1,36 @@
-<div class="container">
+<div class="custom-container">
   <div class="deconstructed">
-  Mes Locations
-  <div>Mes Locations</div>
-  <div>Mes Locations</div>
-  <div>Mes Locations</div>
-  <div>Mes Locations</div>
-</div>
-<div class="container mt-5">
-<% @rentals.each do |rental| %>
-  <div class="card-product justify-content-between mb-4">
-    <div class="d-flex align-items-center">
-    <% if rental.boat.photo? %>
-        <% background_url = cl_image_path rental.boat.photo, width: 400, height: 500, crop: :fill %>
-    <% else %>
-        <% background_url = image_path 'boat.jpg' %>
-    <% end %>
-    <img src="<%= background_url %>" />
-    <div class="card-product-infos">
-      <h2><%= rental.boat.name %></h2>
-      <p><%= rental.date %></p>
-    </div>
-    </div>
-    <div class="text-right mr-4 align-items-center">
-    <%= link_to("", edit_rental_path(rental), class: 'fas fa-edit fa-2x mr-4 mb-4') %>
-    <br>
-    <%= link_to("", rental_path(rental),
-            class: 'far fa-trash-alt fa-2x mr-4 mt-4',
-            method: :delete,
-            data: { confirm: "Are you sure?" }) %>
-    </div>
+    Mes Locations
+    <div>Mes Locations</div>
+    <div>Mes Locations</div>
+    <div>Mes Locations</div>
+    <div>Mes Locations</div>
   </div>
-<% end %>
-</div>
-<!--   <br>
-   <div>
-    <h2>Produced by Naja</h2>
-    <ul>
-      <div class="d-flex p-2 align-content-start flex-wrap justify-content-around">
-     <% @rentals.each do |rental| %>
-       <li class="info-rental" style="list-style: none;">
-       <div class="rental-photo">
-        <% if rental.boat.photo? %>
-             <% background_url = cl_image_path boat.photo, width: 400, height: 500, crop: :fill %>
-         <% else %>
-             <% background_url = image_path 'boat.jpg' %>
-         <% end %>
-          <img src="<%= background_url %>" />
-         </div>
-          <div class="rental-info">
-            <%= rental.boat.name %>
-            <br>
-            <%= rental.boat.description %>
-            <br>
-            <%= rental.date %>
-          </div>
-
-        <div class="rental-icon">
-            <%= link_to("", edit_rental_path(rental), class: 'fas fa-edit') %>
-          <i class="fas fa-anchor"></i>
-        </div>
-        </li>
+  <div class="container mt-5">
+  <% @rentals.each do |rental| %>
+    <div class="card-product justify-content-between mb-4">
+      <div class="d-flex align-items-center">
+      <% if rental.boat.photo? %>
+          <% background_url = cl_image_path rental.boat.photo, width: 400, height: 500, crop: :fill %>
+      <% else %>
+          <% background_url = image_path 'boat.jpg' %>
       <% end %>
+      <img src="<%= background_url %>" />
+      <div class="card-product-infos">
+        <h2><%= rental.boat.name %></h2>
+        <p><%= rental.date %></p>
       </div>
-    </ul>
-   </div>
-   <div class="d-flex justify-content-center location-button">
-    <p class="btn-log"><%= link_to('Back to home', root_path, class: 'btn btn-primary') %></p>
+      </div>
+      <div class="text-right mr-4 align-items-center">
+      <%= link_to("", edit_rental_path(rental), class: 'fas fa-edit fa-2x mr-4 mb-4') %>
+      <br>
+      <%= link_to("", rental_path(rental),
+              class: 'far fa-trash-alt fa-2x mr-4 mt-4',
+              method: :delete,
+              data: { confirm: "Are you sure?" }) %>
+      </div>
+    </div>
+  <% end %>
   </div>
 </div>
- -->
 </div>
