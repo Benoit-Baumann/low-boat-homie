@@ -1,4 +1,5 @@
 <div class="custom-container">
+  <h3>A quelle date désirez vous réserver votre bateau?</h3>
   <%= simple_form_for [@boat, @rental] do |f| %>
     <%= f.input :date %>
     <%= f.submit "Réserver", class: "btn btn-primary" %>
