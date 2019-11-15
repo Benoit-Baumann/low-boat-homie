@@ -6,8 +6,9 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :boats, foreign_key: :owner_id
-  has_many :rentals
+  has_many :boats, foreign_key: :owner_id#, dependent: :destroy
+  has_many :rentals#, dependent: :destroy
+  has_many :reviews#, dependent: :destroy
   mount_uploader :photo, PhotoUploader
 
   def full_name
