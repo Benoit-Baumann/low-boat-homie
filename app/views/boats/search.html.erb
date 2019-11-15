@@ -4,16 +4,18 @@
   </div>
 
   <%= render partial: 'search_bar' %>
+
+</div>
+<div class="container">
+  <div class="deconstructed">
+    Les bateaux les plus loués
+    <div>Les bateaux les plus loués</div>
+    <div>Les bateaux les plus loués</div>
+    <div>Les bateaux les plus loués</div>
+    <div>Les bateaux les plus loués</div>
+  </div>
 </div>
 
-<div class="deconstructed">
-  Les bateaux les plus loués
-  <div>Les bateaux les plus loués</div>
-  <div>Les bateaux les plus loués</div>
-  <div>Les bateaux les plus loués</div>
-  <div>Les bateaux les plus loués</div>
-</div>
 <div class="container mt-4">
   <%= render partial: 'boat_cards.html.erb', locals: {boats: @boats} %>
-
 </div>
